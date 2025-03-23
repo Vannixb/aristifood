@@ -73,4 +73,9 @@ footer {
     padding: 15px;
     background-color: #333;
     color: white;
+    
+footer p {
+    margin: 5px 0;
+    font-size: 14px;
 }
+
