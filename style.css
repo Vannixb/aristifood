@@ -68,17 +68,21 @@ header {
     font-size: 18px;
 }
 
+/* Perbaikan footer */
 footer {
     margin-top: 20px;
     padding: 15px;
     background-color: #333;
     color: white;
-    
+    text-align: center;
+}
+
 footer p {
     margin: 5px 0;
     font-size: 14px;
 }
 
+/* Tombol WhatsApp */
 .order-button {
     display: inline-block;
     background-color: #25D366; /* Warna hijau khas WhatsApp */
@@ -95,5 +99,3 @@ footer p {
 .order-button:hover {
     background-color: #1EBE57;
 }
-
-
