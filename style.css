@@ -79,3 +79,21 @@ footer p {
     font-size: 14px;
 }
 
+.order-button {
+    display: inline-block;
+    background-color: #25D366; /* Warna hijau khas WhatsApp */
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+}
+
+.order-button:hover {
+    background-color: #1EBE57;
+}
+
+
