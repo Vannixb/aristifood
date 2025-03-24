@@ -1,69 +1,56 @@
-let cart = [];
+document.addEventListener("DOMContentLoaded", () => {
+    let cart = [];
+    const cartIcon = document.querySelector(".cart-icon");
+    const cartCount = document.getElementById("cart-count");
+    const cartItemsContainer = document.getElementById("cart-items");
+    const totalPriceElement = document.getElementById("total-price");
+    const cartTab = document.getElementById("cart-tab");
 
-document.querySelectorAll(".add-to-cart").forEach(button => {
-    button.addEventListener("click", function() {
-        let name = this.getAttribute("data-name");
-        let price = parseInt(this.getAttribute("data-price"));
+    function updateCart() {
+        cartItemsContainer.innerHTML = "";
+        let total = 0;
+        cart.forEach(item => {
+            total += item.price * item.quantity;
+            cartItemsContainer.innerHTML += `
+                <div class="cart-item">
+                    <span>${item.name} x${item.quantity}</span>
+                    <button onclick="removeFromCart(${item.id})">❌</button>
+                </div>
+            `;
+        });
+        cartCount.innerText = cart.length;
+        totalPriceElement.innerText = `Rp ${total.toLocaleString()}`;
+    }
 
-        let existingItem = cart.find(item => item.name === name);
-        if (existingItem) {
-            existingItem.quantity++;
+    window.addToCart = (id, name, price) => {
+        let found = cart.find(item => item.id === id);
+        if (found) {
+            found.quantity++;
         } else {
-            cart.push({ name, price, quantity: 1 });
+            cart.push({ id, name, price, quantity: 1 });
         }
-
         updateCart();
-    });
-});
+    };
 
-function updateCart() {
-    let cartList = document.getElementById("cart-items");
-    let cartTotal = document.getElementById("cart-total");
+    window.removeFromCart = (id) => {
+        cart = cart.filter(item => item.id !== id);
+        updateCart();
+    };
 
-    cartList.innerHTML = "";
-    let totalPrice = 0;
-
-    cart.forEach((item, index) => {
-        let li = document.createElement("li");
-        li.innerHTML = `
-            ${item.name} - Rp ${item.price.toLocaleString()} x ${item.quantity}
-            <div class="cart-buttons">
-                <button class="subtract-item" onclick="changeQuantity(${index}, -1)">-</button>
-                <button class="add-item" onclick="changeQuantity(${index}, 1)">+</button>
-                <button class="remove-item" onclick="removeItem(${index})">Hapus</button>
-            </div>
-        `;
-        cartList.appendChild(li);
-        totalPrice += item.price * item.quantity;
-    });
-
-    cartTotal.textContent = `Rp ${totalPrice.toLocaleString()}`;
-}
-
-function changeQuantity(index, change) {
-    cart[index].quantity += change;
-    if (cart[index].quantity <= 0) {
-        cart.splice(index, 1);
+    function toggleCart() {
+        cartTab.classList.toggle("active");
     }
-    updateCart();
-}
-
-function removeItem(index) {
-    cart.splice(index, 1);
-    updateCart();
-}
-
-document.getElementById("checkout").addEventListener("click", function() {
-    if (cart.length === 0) {
-        alert("Keranjang masih kosong!");
-        return;
-    }
-
-    let message = "Halo, saya ingin memesan:\n";
-    cart.forEach(item => {
-        message += `- ${item.name} x${item.quantity} Rp ${item.price.toLocaleString()}\n`;
+    
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+        button.addEventListener("click", (e) => {
+            let item = e.target.closest(".menu-item");
+            addToCart(
+                parseInt(item.dataset.id),
+                item.dataset.name,
+                parseInt(item.dataset.price)
+            );
+        });
     });
 
-    let whatsappLink = `https://wa.me/6289637728503?text=${encodeURIComponent(message)}`;
-    window.open(whatsappLink, "_blank");
+    window.toggleCart = toggleCart;
 });
