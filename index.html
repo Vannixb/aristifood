@@ -3,54 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aristi Food - Menu</title>
+    <title>Warung Aristifood</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <header>
-        <h1>🍽️ Aristi Food</h1>
-        <p>Pesan Makanan Lezat Dengan Mudah!</p>
+        <div class="logo">
+            <img src="images/logo.png" alt="Warung Aristifood">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Promo</a></li>
+                <li><a href="#">Kontak</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="menu">
-        <h2>📋 Menu Makanan</h2>
-        <div class="menu-container">
-            <div class="menu-item">
-                <img src="nasi-pecel.jpg" alt="Nasi Pecel">
-                <h3>Nasi Pecel</h3>
-                <p>Pecel dengan bumbu kacang khas</p>
-                <span class="price">Rp 15.000</span>
-                <button class="add-to-cart" data-name="Nasi Pecel" data-price="15000">Tambah</button>
-            </div>
-            <div class="menu-item">
-                <img src="nasi-campur.jpg" alt="Nasi Campur">
-                <h3>Nasi Campur</h3>
-                <p>Nasi dengan lauk komplit dan sambal</p>
-                <span class="price">Rp 18.000</span>
-                <button class="add-to-cart" data-name="Nasi Campur" data-price="18000">Tambah</button>
-            </div>
-            <div class="menu-item">
-                <img src="dadar-jagung.jpg" alt="Dadar Jagung">
-                <h3>Dadar Jagung</h3>
-                <p>Gurih dan renyah, cocok untuk cemilan</p>
-                <span class="price">Rp 5.000</span>
-                <button class="add-to-cart" data-name="Dadar Jagung" data-price="5000">Tambah</button>
-            </div>
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <h1>Selamat Datang di Warung Aristifood</h1>
+            <p>Pesan makanan favorit Anda dengan mudah!</p>
+            <button>Pesan Sekarang</button>
+        </section>
 
-    <section class="cart">
-        <h2>🛒 Keranjang Belanja</h2>
-        <div id="cart-items"></div>
-        <p><strong>Total Harga: Rp <span id="total-price">0</span></strong></p>
-        <button id="checkout-button">Checkout via WhatsApp</button>
-    </section>
+        <section class="menu">
+            <h2>Menu Kami</h2>
+            <div class="menu-item">
+                <img src="images/food1.jpg" alt="Makanan 1">
+                <h3>Nasi Goreng</h3>
+                <p>Harga: Rp 20.000</p>
+                <button>Pesan</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/food2.jpg" alt="Makanan 2">
+                <h3>Ayam Penyet</h3>
+                <p>Harga: Rp 25.000</p>
+                <button>Pesan</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/food3.jpg" alt="Makanan 3">
+                <h3>Bakso</h3>
+                <p>Harga: Rp 15.000</p>
+                <button>Pesan</button>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>© 2025 Aristi Food | Nikmati Sajian Lezat Kami!</p>
+        <p>&copy; 2023 Warung Aristifood. All rights reserved.</p>
     </footer>
-
 </body>
 </html>
