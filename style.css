@@ -14,24 +14,24 @@ body {
 header {
     background-color: #ff6600;
     color: white;
-    padding: 20px;
+    padding: 15px;
 }
 
-.menu {
+.menu, .cart {
     padding: 30px;
 }
 
-.menu h2 {
+.menu h2, .cart h2 {
     margin-bottom: 20px;
     font-size: 26px;
     color: #ff6600;
 }
 
 .menu-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    flex-wrap: wrap;
+    justify-items: center;
 }
 
 .menu-item {
@@ -68,34 +68,56 @@ header {
     font-size: 18px;
 }
 
-/* Perbaikan footer */
+.add-to-cart {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #e65c00;
+}
+
+.cart {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.cart p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.cart button {
+    background-color: #25D366;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.cart button:hover {
+    background-color: #1EBE57;
+}
+
 footer {
     margin-top: 20px;
     padding: 15px;
     background-color: #333;
     color: white;
-    text-align: center;
-}
-
-footer p {
-    margin: 5px 0;
-    font-size: 14px;
-}
-
-/* Tombol WhatsApp */
-.order-button {
-    display: inline-block;
-    background-color: #25D366; /* Warna hijau khas WhatsApp */
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 10px;
-    display: block;
-    text-align: center;
-}
-
-.order-button:hover {
-    background-color: #1EBE57;
 }
