@@ -13,8 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
             total += item.price * item.quantity;
             cartItemsContainer.innerHTML += `
                 <div class="cart-item">
-                    <span>${item.name} x${item.quantity}</span>
-                    <button onclick="removeFromCart(${item.id})">❌</button>
+                    <span>${item.name} - Rp ${item.price.toLocaleString()} x ${item.quantity}</span>
+                    <button onclick="decreaseQuantity(${item.id})">-</button>
+                    <button onclick="increaseQuantity(${item.id})">+</button>
+                    <button onclick="removeFromCart(${item.id})">Hapus</button>
                 </div>
             `;
         });
@@ -34,6 +36,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.removeFromCart = (id) => {
         cart = cart.filter(item => item.id !== id);
+        updateCart();
+    };
+
+    window.increaseQuantity = (id) => {
+        let found = cart.find(item => item.id === id);
+        if (found) {
+            found.quantity++;
+            updateCart();
+        }
+    };
+
+    window.decreaseQuantity = (id) => {
+        let found = cart.find(item => item.id === id);
+        if (found && found.quantity > 1) {
+            found.quantity--;
+        } else {
+            removeFromCart(id);
+        }
         updateCart();
     };
 
