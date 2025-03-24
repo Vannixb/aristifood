@@ -4,46 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aristi Food - Menu</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
         <h1>Aristi Food</h1>
-        <p>Makanan Lezat, Harga Bersahabat</p>
+        <p>Menu Lezat, Harga Bersahabat!</p>
     </header>
 
     <section class="menu">
-        <h2>Menu Kami</h2>
+        <h2>Menu Makanan</h2>
         <div class="menu-container">
+            <!-- Item 1 -->
             <div class="menu-item">
-                <img src="IMG_2634.jpeg" alt="Nasi Pecel">
+                <img src="nasi-pecel.jpg" alt="Nasi Pecel">
                 <h3>Nasi Pecel</h3>
-                <p>Nasi dengan sayuran segar dan sambal kacang khas.</p>
-                <span class="price">Rp 10.000</span>
-                <a href="https://wa.me/6289637728503?text=Halo%20Aristi%20Food,%20saya%20ingin%20memesan%20Nasi%20Pecel." class="order-button">Pesan Sekarang</a>
+                <p>Pecel dengan bumbu kacang khas</p>
+                <span class="price">Rp 15.000</span>
+                <button class="add-to-cart" data-name="Nasi Pecel" data-price="15000">Tambah ke Keranjang</button>
             </div>
 
+            <!-- Item 2 -->
             <div class="menu-item">
-                <img src="IMG_2636.jpeg" alt="Nasi Campur">
+                <img src="nasi-campur.jpg" alt="Nasi Campur">
                 <h3>Nasi Campur</h3>
-                <p>Nasi dengan lauk beragam, enak dan bergizi.</p>
-                <span class="price">Rp 10.000</span>
-                <a href="https://wa.me/6289637728503?text=Halo%20Aristi%20Food,%20saya%20ingin%20memesan%20Nasi%20Pecel." class="order-button">Pesan Sekarang</a>
+                <p>Nasi dengan lauk komplit dan sambal</p>
+                <span class="price">Rp 18.000</span>
+                <button class="add-to-cart" data-name="Nasi Campur" data-price="18000">Tambah ke Keranjang</button>
             </div>
 
+            <!-- Item 3 -->
             <div class="menu-item">
-                <img src="IMG_2637.jpeg" alt="Dadar Jagung">
+                <img src="dadar-jagung.jpg" alt="Dadar Jagung">
                 <h3>Dadar Jagung</h3>
-                <p>Gorengan jagung khas dengan rasa gurih dan renyah.</p>
+                <p>Gurih dan renyah, cocok untuk cemilan</p>
                 <span class="price">Rp 5.000</span>
-                <a href="https://wa.me/6289637728503?text=Halo%20Aristi%20Food,%20saya%20ingin%20memesan%20Nasi%20Pecel." class="order-button">Pesan Sekarang</a>
+                <button class="add-to-cart" data-name="Dadar Jagung" data-price="5000">Tambah ke Keranjang</button>
             </div>
+
         </div>
     </section>
 
+    <!-- Keranjang Belanja -->
+    <section class="cart">
+        <h2>Keranjang Belanja</h2>
+        <div id="cart-items"></div>
+        <p><strong>Total Harga: Rp <span id="total-price">0</span></strong></p>
+        <button id="checkout-button">Checkout</button>
+    </section>
+
     <footer>
-        <p>&copy; 2025 Aristi Food | Lezat & Nikmat</p>
-        <p>Alamat: Jl. Pancawarna 7.6 No. 6</p>
+        <p>© 2025 Aristi Food | Nikmati Sajian Lezat Kami!</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
