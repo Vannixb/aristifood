@@ -5,59 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aristi Food - Menu</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
 
     <header>
-        <h1>Aristi Food</h1>
-        <p>Menu Lezat, Harga Bersahabat!</p>
+        <h1>🍽️ Aristi Food</h1>
+        <p>Pesan Makanan Lezat Dengan Mudah!</p>
     </header>
 
     <section class="menu">
-        <h2>Menu Makanan</h2>
+        <h2>📋 Menu Makanan</h2>
         <div class="menu-container">
-            <!-- Item 1 -->
             <div class="menu-item">
                 <img src="nasi-pecel.jpg" alt="Nasi Pecel">
                 <h3>Nasi Pecel</h3>
                 <p>Pecel dengan bumbu kacang khas</p>
                 <span class="price">Rp 15.000</span>
-                <button class="add-to-cart" data-name="Nasi Pecel" data-price="15000">Tambah ke Keranjang</button>
+                <button class="add-to-cart" data-name="Nasi Pecel" data-price="15000">Tambah</button>
             </div>
-
-            <!-- Item 2 -->
             <div class="menu-item">
                 <img src="nasi-campur.jpg" alt="Nasi Campur">
                 <h3>Nasi Campur</h3>
                 <p>Nasi dengan lauk komplit dan sambal</p>
                 <span class="price">Rp 18.000</span>
-                <button class="add-to-cart" data-name="Nasi Campur" data-price="18000">Tambah ke Keranjang</button>
+                <button class="add-to-cart" data-name="Nasi Campur" data-price="18000">Tambah</button>
             </div>
-
-            <!-- Item 3 -->
             <div class="menu-item">
                 <img src="dadar-jagung.jpg" alt="Dadar Jagung">
                 <h3>Dadar Jagung</h3>
                 <p>Gurih dan renyah, cocok untuk cemilan</p>
                 <span class="price">Rp 5.000</span>
-                <button class="add-to-cart" data-name="Dadar Jagung" data-price="5000">Tambah ke Keranjang</button>
+                <button class="add-to-cart" data-name="Dadar Jagung" data-price="5000">Tambah</button>
             </div>
-
         </div>
     </section>
 
-    <!-- Keranjang Belanja -->
     <section class="cart">
-        <h2>Keranjang Belanja</h2>
+        <h2>🛒 Keranjang Belanja</h2>
         <div id="cart-items"></div>
         <p><strong>Total Harga: Rp <span id="total-price">0</span></strong></p>
-        <button id="checkout-button">Checkout</button>
+        <button id="checkout-button">Checkout via WhatsApp</button>
     </section>
 
     <footer>
         <p>© 2025 Aristi Food | Nikmati Sajian Lezat Kami!</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
